@@ -8,7 +8,7 @@ library(survminer)
 print("Do you wish the plot to contain confidence intervals? - yes=(y)?")
 Fl <- readLines(con = stdin(), n = 1, ok = TRUE)
 
-print("TCGA PAAD Survival Censored 750 days Filtered RSEM NORM COUNT.txt")
+print("HJ_BioInfo_Survival_RNAseqExpectedCount_Censored.txt")
 FileChoice <- file.choose("TCGA PAAD Survival Censored 750 days Filtered RSEM NORM COUNT.txt") # choose input file
 a <- read.delim(FileChoice, skip = 0, sep = "\t", as.is = TRUE, header = FALSE)
 print("FIle is read")
@@ -17,7 +17,7 @@ print("FIle is read")
 colnames(a) <- a[1, ]
 a <- a[-1, ]
 #a[79] <- NULL
-CCC <- a[, 4:ncol(a)]
+CCC <- a[, 6:ncol(a)]
 time <- as.numeric(a[, 3])
 status <- as.numeric(a[, 2])
 
